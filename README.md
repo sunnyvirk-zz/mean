@@ -1,4 +1,4 @@
 mean
 ====
 
-Demo Mean Stack (MongoDB, Express, AngularJS &amp; NodeJS
+Demo Mean Stack (MongoDB, Express, AngularJS &amp; NodeJS)
