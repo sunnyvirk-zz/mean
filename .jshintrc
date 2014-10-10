@@ -40,7 +40,7 @@
       "tesco": false,
       "alert": true,
       "_": true,
-      "Backbone": true,
+      "angular": true,
       "page": true,
       "history": true
     },
