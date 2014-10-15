@@ -18,6 +18,7 @@ module.exports = function () {
             if (err) {
                 return done(err);
             }
+
             // If a user was not found, continue to the next middleware with an error message
             if (!user) {
                 return done(null, false, {
@@ -31,6 +32,7 @@ module.exports = function () {
                     message: 'Invalid password'
                 });
             }
+
             // Otherwise, continue to the next middleware with the user object
             return done(null, user);
         });

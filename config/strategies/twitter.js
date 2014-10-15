@@ -16,7 +16,8 @@ module.exports = function () {
         consumerSecret: config.twitter.clientSecret,
         callbackURL: config.twitter.callbackURL,
         passReqToCallback: true
-    }, function (req, token, tokenSecret, profile, done) {
+    },
+    function (req, token, tokenSecret, profile, done) {
         // Set the user's provider data and include tokens
         var providerData = profile._json;
         providerData.token = token;

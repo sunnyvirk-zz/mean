@@ -1,7 +1,10 @@
+// Invoke 'strict' JavaScript mode
 'use strict';
 
-angular.module('articles').config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.
+// Configure the 'articles' module routes
+angular.module('articles').config(['$routeProvider',
+    function ($routeProvider) {
+        $routeProvider.
         when('/articles', {
             templateUrl: 'articles/views/list-articles.client.view.html'
         }).
@@ -14,4 +17,5 @@ angular.module('articles').config(['$routeProvider', function ($routeProvider) {
         when('/articles/:articleId/edit', {
             templateUrl: 'articles/views/edit-article.client.view.html'
         });
-}]);
+    }
+]);

@@ -27,6 +27,7 @@
     "maxcomplexity" : 5,
     "expr"          : true,
     "globals": {
+      "jasmine": true,
       "describe": true,
       "it": true,
       "should": true,
@@ -42,7 +43,9 @@
       "_": true,
       "angular": true,
       "page": true,
-      "history": true
+      "history": true,
+      "inject": true,
+      "expect": true
     },
     "boss"          : true
 

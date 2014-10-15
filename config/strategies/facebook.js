@@ -34,7 +34,7 @@ module.exports = function () {
             providerData: providerData
         };
 
-        // Save the user OAuth profile
+            // Save the user OAuth profile
         users.saveOAuthUserProfile(req, providerUserProfile, done);
     }));
 };

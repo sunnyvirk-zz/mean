@@ -16,7 +16,8 @@ module.exports = function () {
         clientSecret: config.google.clientSecret,
         callbackURL: config.google.callbackURL,
         passReqToCallback: true
-    }, function (req, accessToken, refreshToken, profile, done) {
+    },
+    function (req, accessToken, refreshToken, profile, done) {
         // Set the user's provider data and include tokens
         var providerData = profile._json;
         providerData.accessToken = accessToken;

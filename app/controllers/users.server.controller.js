@@ -69,6 +69,7 @@ exports.renderSignup = function (req, res, next) {
 
 // Create a new controller method that creates new 'regular' users
 exports.signup = function (req, res, next) {
+    // If user is not connected, create and login a new user, otherwise redirect the user back to the main application page
     if (!req.user) {
         // Create a new 'User' model instance
         var user = new User(req.body);
@@ -127,6 +128,7 @@ exports.saveOAuthUserProfile = function (req, profile, done) {
                 User.findUniqueUsername(possibleUsername, null, function (availableUsername) {
                     // Set the available user name
                     profile.username = availableUsername;
+
                     // Create the user
                     user = new User(profile);
 
@@ -153,12 +155,15 @@ exports.signout = function (req, res) {
     res.redirect('/');
 };
 
+// Create a new controller middleware that is used to authorize authenticated operations
 exports.requiresLogin = function (req, res, next) {
+    // If a user is not authenticated send the appropriate error message
     if (!req.isAuthenticated()) {
         return res.status(401).send({
             message: 'User is not logged in'
         });
     }
 
+    // Call the next middleware
     next();
 };

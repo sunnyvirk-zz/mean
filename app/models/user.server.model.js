@@ -28,6 +28,7 @@ var UserSchema = new Schema({
         type: String,
         // Validate the 'password' value length
         validate: [
+
             function (password) {
                 return password && password.length > 6;
             }, 'Password should be longer'
@@ -92,7 +93,7 @@ UserSchema.statics.findUniqueUsername = function (username, suffix, callback) {
     }, function (err, user) {
         // If an error occurs call the callback with a null value, otherwise find find an available unique username
         if (!err) {
-
+            // If an available unique username was found call the callback method, otherwise call the 'findUniqueUsername' method again with a new suffix
             if (!user) {
                 callback(possibleUsername);
             } else {
